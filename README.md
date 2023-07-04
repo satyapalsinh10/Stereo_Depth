@@ -20,12 +20,18 @@ For the given stereo image pair, assuming a proper alignment performed a stereo 
 
 1. Perform stereo matching on the rectified image pair to calculate the disparity map.
 
+
+
+#### Disparity map 
 ![image](https://github.com/satyapalsinh10/Stereo_Depth/assets/125583562/2807c210-9d43-4eae-8bfc-d64cf4671fcf)
 
   
 3. Decompose the projection matrices into the camera intrinsic matrix $K$, and extrinsics $R$, $t$.
 4. Generate the depth map and Use the estimated depth information to determine the distance to potential collisions in the driving scenario.
 
+
+
+#### Depth estimation heatmap 
 ![image](https://github.com/satyapalsinh10/Stereo_Depth/assets/125583562/b8be320d-2e9a-4e9b-927a-430376356481)
 
 
@@ -33,6 +39,7 @@ For the given stereo image pair, assuming a proper alignment performed a stereo 
 
 We have a map of the depths of each pixel in the scene and use the trained object detector to select a rectangular section containing the object of interest or a potential obstacle (like a motorcycle) to find the object. Our system automatically determines where this obstacle is in the scene using a cross-correlation algorithm for each pixel in the image and generated the associative heat map using OpenCV.
 
+#### Cross-correlation heatmap 
 ![image](https://github.com/satyapalsinh10/Stereo_Depth/assets/125583562/a6be9e95-1200-42e9-82eb-f10e00fd9456)
 
 
